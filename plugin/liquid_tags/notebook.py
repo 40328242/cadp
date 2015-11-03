@@ -285,7 +285,7 @@ def notebook(preprocessor, tag, markup):
     nb_path = os.path.join('content', nb_dir, src)
 
     if not os.path.exists(nb_path):
-        raise ValueError("File {0} could not be found".format(nb_path, encoding="utf-8"))
+        raise ValueError("File {0} could not be found".format(nb_path))
 
     # Create the custom notebook converter
     c = Config({'CSSHTMLHeaderTransformer':
