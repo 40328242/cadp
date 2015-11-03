@@ -38,10 +38,7 @@ Output
     <img src="http://photos-c.ak.instagram.com/hphotos-ak-xaf1/t51.2885-15/917172_604907902963826_254280879_n.jpg" width="450" title="warehouse window title" alt="alt text" class="test_class instagram">
 """
 import re
-try:
-    from urllib.request import urlopen
-except ImportError:
-    from urllib import urlopen
+import urllib
 from .mdx_liquid_tags import LiquidTags
 
 SYNTAX = '{% gram shortcode [size] [width] [class name(s)] [title text | "title text" ["alt text"]] %}'
@@ -62,7 +59,7 @@ def gram(preprocessor, tag, markup):
     match = ReGram.search(markup)
     if match:
         attrs = dict([(key, val.strip())
-                      for (key, val) in match.groupdict().items() if val])
+                      for (key, val) in match.groupdict().iteritems() if val])
     else:
         raise ValueError('Error processing input. '
                          'Expected syntax: {0}'.format(SYNTAX))
@@ -78,7 +75,7 @@ def gram(preprocessor, tag, markup):
         url = url+size
         del attrs['size']
 
-    r = urlopen(url)
+    r = urllib.urlopen(url)
 
     if(r.getcode()==404):
         raise ValueError('%s isnt a photo.'%shortcode)
@@ -96,7 +93,7 @@ def gram(preprocessor, tag, markup):
     #print('updated dict: '+repr(attrs))
 
     # Return the formatted text
-    return '<img src="{0}"{1}>'.format(gram_url,' '.join(' {0}="{1}"'.format(key,val) for (key,val) in attrs.items()))
+    return '<img src="{0}"{1}>'.format(gram_url,' '.join(' {0}="{1}"'.format(key,val) for (key,val) in attrs.iteritems()))
 
 #----------------------------------------------------------------------
 # This import allows image tag to be a Pelican plugin
