@@ -53,49 +53,27 @@ from .mdx_liquid_tags import LiquidTags
 import IPython
 IPYTHON_VERSION = IPython.version_info[0]
 
-try:
-    import nbformat
-except:
-    pass
-
 if not IPYTHON_VERSION >= 1:
     raise ValueError("IPython version 1.0+ required for notebook tag")
 
 try:
-    from nbconvert.filters.highlight import _pygments_highlight
+    from IPython.nbconvert.filters.highlight import _pygments_highlight
 except ImportError:
-    try:
-        from IPython.nbconvert.filters.highlight import _pygments_highlight
-    except ImportError:
-        # IPython < 2.0
-        from IPython.nbconvert.filters.highlight import _pygment_highlight as _pygments_highlight
+    # IPython < 2.0
+    from IPython.nbconvert.filters.highlight import _pygment_highlight as _pygments_highlight
 
 from pygments.formatters import HtmlFormatter
 
-try:
-    from nbconvert.exporters import HTMLExporter
-except ImportError:
-        from IPython.nbconvert.exporters import HTMLExporter
+from IPython.nbconvert.exporters import HTMLExporter
+from IPython.config import Config
 
 try:
-    from traitlets.config import Config
+    from IPython.nbconvert.preprocessors import Preprocessor
 except ImportError:
-    from IPython.config import Config
+    # IPython < 2.0
+    from IPython.nbconvert.transformers import Transformer as Preprocessor
 
-try:
-    from nbconvert.preprocessors import Preprocessor
-except ImportError:
-    try:
-        from IPython.nbconvert.preprocessors import Preprocessor
-    except ImportError:
-        # IPython < 2.0
-        from IPython.nbconvert.transformers import Transformer as Preprocessor
-
-try:
-    from traitlets import Integer
-except ImportError:
-    from IPython.utils.traitlets import Integer
-
+from IPython.utils.traitlets import Integer
 from copy import deepcopy
 
 #----------------------------------------------------------------------
@@ -231,7 +209,7 @@ class SubCell(Preprocessor):
                 worksheet.cells = cells[self.start:self.end]
         else:
             nbc.cells = nbc.cells[self.start:self.end]
-
+        
         return nbc, resources
 
     call = preprocess # IPython < 2.0
@@ -315,15 +293,12 @@ def notebook(preprocessor, tag, markup):
                             **subcell_kwarg)
 
     # read and parse the notebook
-    with open(nb_path, encoding="utf-8") as f:
+    with open(nb_path) as f:
         nb_text = f.read()
         if IPYTHON_VERSION < 3:
             nb_json = IPython.nbformat.current.reads_json(nb_text)
         else:
-            try:
-                nb_json = nbformat.reads(nb_text, as_version=4)
-            except:
-                nb_json = IPython.nbformat.reads(nb_text, as_version=4)
+            nb_json = IPython.nbformat.reads(nb_text, as_version=4)
 
     (body, resources) = exporter.from_notebook_node(nb_json)
 
@@ -336,7 +311,7 @@ def notebook(preprocessor, tag, markup):
                            for css_line in resources['inlining']['css'])
         header += JS_INCLUDE
 
-        with open('_nb_header.html', 'w', encoding="utf-8") as f:
+        with open('_nb_header.html', 'w') as f:
             f.write(header)
         notebook.header_saved = True
 
