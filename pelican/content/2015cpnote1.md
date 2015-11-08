@@ -1,4 +1,4 @@
-Title: 2015 電腦輔助設計實習 Jupyter
+Title: 2015 計算機程式 Jupyter
 Date: 2015-11-3
 Modified: 2015-11-3
 Category: Python
