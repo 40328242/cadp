@@ -23,7 +23,7 @@
 <v t="amd.20150919102739.1"><vh>專案架構</vh>
 <v t="amd.20150919113520.1"><vh>@edit .gitignore</vh></v>
 <v t="amd.20150919103428.1"><vh>reveal.js 設定</vh></v>
-<v t="amd.20150919103341.1"><vh>Jupyter 設定</vh>
+<v t="amd.20150919103341.1" a="E"><vh>Jupyter 設定</vh>
 <v t="amd.20150919103923.1"><vh>設定檔案位置</vh></v>
 <v t="amd.20150919104249.1"><vh>檢查 profile 位置</vh></v>
 </v>
@@ -36,12 +36,13 @@
 </v>
 <v t="amd.20150919113957.1"><vh>以下為 pelican 文章</vh></v>
 <v t="amd.20150919124128.1"><vh>@button pelican content</vh></v>
-<v t="amd.20150919114010.1"><vh>@path pelican\content</vh>
+<v t="amd.20150919114010.1" a="E"><vh>@path pelican\content</vh>
 <v t="amd.20150920000911.1"><vh>@edit 2015cpnote1.md</vh></v>
 <v t="amd.20150919114035.1"><vh>@edit 2015cphww1.md</vh></v>
 <v t="leo.20151028213353.1"><vh>@edit 2015cphww2.md</vh></v>
 <v t="leo.20151101171606.1"><vh>@edit 2015cphww3.md</vh></v>
 <v t="leo.20151108150440.1"><vh>@edit 2015cphww4.md</vh></v>
+<v t="leo.20160105155700.1"><vh>@edit 2015cphww5.md</vh></v>
 </v>
 <v t="amd.20150919120205.1"><vh>以下為 reveal 投影片</vh></v>
 <v t="amd.20150913233943.1"><vh>@clean cadpbw1.html</vh>
@@ -354,6 +355,30 @@
 </v>
 </v>
 <v t="leo.20151108150619.11"><vh>script</vh></v>
+</v>
+</v>
+</v>
+<v t="leo.20160105155713.1"><vh>@clean simplest5.html</vh>
+<v t="leo.20160105155713.2"><vh>檔案說明</vh></v>
+<v t="leo.20160105155713.3" a="E"><vh>html 標註</vh>
+<v t="leo.20160105155713.4" a="E"><vh>body 標註</vh>
+<v t="leo.20160105155713.5" a="E"><vh>div class="reveal"</vh>
+<v t="leo.20160105155713.6" a="E"><vh>div class="slides"</vh>
+<v t="leo.20160105155713.7" a="E"><vh>投影片1</vh>
+<v t="leo.20160105155713.14"><vh>&lt;&lt; header &gt;&gt;</vh></v>
+</v>
+<v t="leo.20160105155713.9" a="E"><vh>投影片2</vh>
+<v t="leo.20160105155713.14"></v>
+</v>
+<v t="leo.20160105155713.11" a="E"><vh>投影片3</vh>
+<v t="leo.20160105155713.14"></v>
+</v>
+<v t="leo.20160105155713.13" a="E"><vh>投影片4</vh>
+<v t="leo.20160105155713.14"></v>
+</v>
+</v>
+</v>
+<v t="leo.20160105155713.15"><vh>script</vh></v>
 </v>
 </v>
 </v>
@@ -2639,5 +2664,107 @@ sudo pip3 install IPython[notebook]==3.2.1
 &lt;/section&gt;
 				
 </t>
+<t tx="leo.20160105155713.1">@language xml
+@tabwidth -4
+@others
+
+</t>
+<t tx="leo.20160105155713.11">&lt;&lt; header &gt;&gt;
+&lt;section&gt;
+    &lt;h3&gt;Nutcracker on onshape&lt;/h3&gt;
+    &lt;hr size="1" align="center" noshade width="100%" color=blue&gt;
+    &lt;p align="left"&gt;onshape的出現,為許多買不起軟體的人帶來福音.首先建立一個資料夾,可以在裡面畫零件和組立,然後可以分享零件給彼此,只是免費版有受限於數量,所以如果創立一個資料夾,然後將彼此組員加入,大家都能在這個資料夾內編輯,來達到協同的目的.&lt;/p&gt;
+    &lt;br&gt;
+    &lt;/section&gt;
+    
+&lt;/section&gt;
+				
+</t>
+<t tx="leo.20160105155713.13">&lt;&lt; header &gt;&gt;
+    &lt;h3&gt;心得與自評&lt;/h3&gt;
+    &lt;br&gt;
+    &lt;p&gt;從creo到onshape,我能感受到版次的重要性是世界的趨勢,相信未來會有更多的軟體加入版次的應用,所以對於這學期所學的版本控制,我覺得比起以往只是純粹學繪圖還來的獲益良多.&lt;/p&gt;
+    &lt;br&gt;
+    &lt;p&gt;評分 : 70&lt;/p&gt; 
+&lt;/section&gt;
+				
+</t>
+<t tx="leo.20160105155713.14">&lt;section data-state="header1"&gt;
+&lt;style&gt;.header1 header:after { 
+display: block;
+white-space: pre;
+content: "課程: 電腦輔助設計實習B \A 學號: 40328242"; }&lt;/style&gt;</t>
+<t tx="leo.20160105155713.15">&lt;script src="lib/js/head.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/reveal.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    // 啟動 Reveal.
+    Reveal.initialize({
+    });
+&lt;/script&gt;
+	
+</t>
+<t tx="leo.20160105155713.2">&lt;!--
+cadp w12 講課內容投影片
+--&gt;
+</t>
+<t tx="leo.20160105155713.3">&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"&gt;
+&lt;title&gt;CADP W12 課程內容&lt;/title&gt;
+&lt;link rel="stylesheet" href="css/reveal.min.css"&gt;
+	&lt;link rel="stylesheet" href="css/theme/default.css" id="theme"&gt;	
+	&lt;!--增加對於 IE 早期版本的支援 --&gt;
+	&lt;!--[if lt IE 9]&gt;
+	&lt;script src="lib/js/html5shiv.js"&gt;&lt;/script&gt;
+	&lt;![endif]--&gt;
+&lt;/head&gt;
+@others
+</t>
+<t tx="leo.20160105155713.4">&lt;body&gt;
+@others
+&lt;/body&gt;
+</t>
+<t tx="leo.20160105155713.5">&lt;!-- 將整個投影片包在 "reveal" class 中 --&gt;
+
+&lt;!-- 出現在每一頁的 header 格式 --&gt;
+
+&lt;header style="position: absolute;top: 20px; left: 20px; z-index:300; font-size:30px;background-color: rgba(255,255,255,0.2)"&gt;&lt;/header&gt;
+
+&lt;div class="reveal"&gt;
+@others
+&lt;/div&gt;
+</t>
+<t tx="leo.20160105155713.6">&lt;!-- 將所有投影片包在 "slides" class 中 --&gt;
+&lt;div class="slides"&gt;
+@others
+&lt;/div&gt;
+</t>
+<t tx="leo.20160105155713.7">&lt;!-- 以下為投影片 --&gt;
+&lt;!-- 每一個 section 都代表一張投影片,  --&gt;
+&lt;!-- section 標註中的多 section 標註, 將往下垂直延伸 --&gt;
+&lt;&lt; header &gt;&gt;
+
+    &lt;section&gt;
+    &lt;p&gt;&lt;font size="5" face="Arial"&gt;&lt;marquee border="0"&gt;版本於 2016 / 1 / 1 更新&lt;/marquee&gt;&lt;/font&gt;&lt;/p&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+    &lt;h2&gt;四設二乙&lt;/h2&gt;
+    &lt;br&gt;
+    &lt;h3&gt;40328242 楊承得&lt;/h3&gt;
+    &lt;h3&gt;期末作業&lt;/h3&gt;		
+    &lt;/section&gt;
+    
+&lt;/section&gt;</t>
+<t tx="leo.20160105155713.9">&lt;&lt; header &gt;&gt;
+&lt;section&gt;
+    &lt;h3&gt;Nutcracker on Creo 2 parametric&lt;/h3&gt;
+    &lt;hr size="1" align="center" noshade width="100%" color=blue&gt;
+    &lt;p align="left"&gt;使用creo來畫nutcracker,首先分別畫出不同零件,然後再將各零件組立起來,另外3D展示則需在畫完零件後檔案儲存成stl,最後推回個人倉儲,再按照格式貼上網址最後顯現出來.
+&lt;/p&gt;
+    &lt;br&gt;
+    &lt;/section&gt;
+    
+&lt;/section&gt;</t>
 </tnodes>
 </leo_file>
